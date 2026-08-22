@@ -15,7 +15,7 @@ export const Route = createRootRoute({
       { title: APP_NAME },
       { name: "description", content: "Merge, split and compress PDFs in your browser. No upload, no signup, no watermark." },
       { name: "theme-color", content: "#f3efe8" },
-      { name: "google-adsense-account", content: "ca-pub-XXXXXXXXXXXXXXXX" },
+      { name: "google-adsense-account", content: "ca-pub-7636435144500691" },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
@@ -34,6 +34,11 @@ export const Route = createRootRoute({
     <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7636435144500691"
+          crossOrigin="anonymous"
+        />
       </head>
       <body>
         <PreviewHostBridge />
