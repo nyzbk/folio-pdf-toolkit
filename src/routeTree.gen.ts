@@ -14,7 +14,6 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as CompressRouteImport } from './routes/compress'
 import { Route as MergeRouteImport } from './routes/merge'
 import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SplitRouteImport } from './routes/split'
 import { Route as TermsRouteImport } from './routes/terms'
 
@@ -43,11 +42,6 @@ const PrivacyRoute = PrivacyRouteImport.update({
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SplitRoute = SplitRouteImport.update({
   id: '/split',
   path: '/split',
@@ -65,7 +59,6 @@ export interface FileRoutesByFullPath {
   '/compress': typeof CompressRoute
   '/merge': typeof MergeRoute
   '/privacy': typeof PrivacyRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/split': typeof SplitRoute
   '/terms': typeof TermsRoute
 }
@@ -75,7 +68,6 @@ export interface FileRoutesByTo {
   '/compress': typeof CompressRoute
   '/merge': typeof MergeRoute
   '/privacy': typeof PrivacyRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/split': typeof SplitRoute
   '/terms': typeof TermsRoute
 }
@@ -86,31 +78,15 @@ export interface FileRoutesById {
   '/compress': typeof CompressRoute
   '/merge': typeof MergeRoute
   '/privacy': typeof PrivacyRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/split': typeof SplitRoute
   '/terms': typeof TermsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | '/'
-    | '/about'
-    | '/compress'
-    | '/merge'
-    | '/privacy'
-    | '/sitemap.xml'
-    | '/split'
-    | '/terms'
+    '/' | '/about' | '/compress' | '/merge' | '/privacy' | '/split' | '/terms'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/about'
-    | '/compress'
-    | '/merge'
-    | '/privacy'
-    | '/sitemap.xml'
-    | '/split'
-    | '/terms'
+  to: '/' | '/about' | '/compress' | '/merge' | '/privacy' | '/split' | '/terms'
   id:
     | '__root__'
     | '/'
@@ -118,7 +94,6 @@ export interface FileRouteTypes {
     | '/compress'
     | '/merge'
     | '/privacy'
-    | '/sitemap.xml'
     | '/split'
     | '/terms'
   fileRoutesById: FileRoutesById
@@ -129,7 +104,6 @@ export interface RootRouteChildren {
   CompressRoute: typeof CompressRoute
   MergeRoute: typeof MergeRoute
   PrivacyRoute: typeof PrivacyRoute
-  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SplitRoute: typeof SplitRoute
   TermsRoute: typeof TermsRoute
 }
@@ -171,13 +145,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/split': {
       id: '/split'
       path: '/split'
@@ -201,7 +168,6 @@ const rootRouteChildren: RootRouteChildren = {
   CompressRoute: CompressRoute,
   MergeRoute: MergeRoute,
   PrivacyRoute: PrivacyRoute,
-  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SplitRoute: SplitRoute,
   TermsRoute: TermsRoute,
 }

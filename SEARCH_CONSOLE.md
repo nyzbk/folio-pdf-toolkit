@@ -55,10 +55,13 @@ Auto ads = **ВЫКЛ**. LIVE ad units = только после Site Ready. С�
 После деплоя, **до** кнопки «Запросить проверку» в AdSense:
 
 1. URL-prefix property = `https://folio-pdf-toolkit.vercel.app/` → подтвердить **HTML-файлом**.
-2. Sitemaps → отправить `https://folio-pdf-toolkit.vercel.app/sitemap.xml` → дождаться **Успешно**.
-3. Проверка URL → `https://folio-pdf-toolkit.vercel.app/` → **Запросить индексирование**. То же для `/split` и `/compress`.
+2. Sitemaps → отправить `sitemap.xml` (в поле уже стоит origin, писать **только** `sitemap.xml` или `/sitemap.xml`). Дождаться **Успешно**.
+   - **«Не получено» / Couldn't fetch** ≠ битый XML. Значит робот sitemap ещё не скачал файл. На скрине 24.08 тип «Неизвестно», дата обработки пустая — первый fetch не состоялся.
+   - Причина не robots и не 404: файл 200. На Vercel serverless-ответ без `Content-Length` робот часто не забирает; канон Folio — **статический** `public/sitemap.xml` (как ads.txt / robots.txt).
+   - После смены static↔route можно нажать «Отправить» ещё раз на тот же URL. Если список URL не менялся и статус уже **Успешно** — повторно не слать.
+3. Проверка URL → `https://folio-pdf-toolkit.vercel.app/` → **Запросить индексирование**. То же для `/split` и `/compress`. Живой тест sitemap: вставить `https://folio-pdf-toolkit.vercel.app/sitemap.xml` в проверку URL. Нужно: Crawl allowed = Да, Page fetch = Успешно.
 4. Только после пункта 2 — AdSense: если сайт ещё не в Sites, добавить; если ads.txt «Не найдено» — подождать краул после GSC Success; **не слать review повторно** пока sitemap не Success.
-5. Sitemap повторно не слать, пока список URL тот же.
+5. Sitemap повторно не слать, пока список URL тот же **и** статус уже Успешно. «Не получено» — можно отправить снова после деплоя static-файла.
 6. Не заводить `http://` и `www.` свойства. Domain-свойство — только после своего домена + DNS TXT.
 7. Коллег в GSC не добавлять без явной просьбы.
 
