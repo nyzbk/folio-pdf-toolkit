@@ -3,9 +3,11 @@
 **Дата:** 22.08.2026  
 **Аккаунт:** `ca-pub-7636435144500691`  
 **Сайты сейчас:**  
-- `folio-pdf-toolkit.vercel.app` — ownership OK, **на проверке**  
+- `folio-pdf-toolkit.vercel.app` — ownership OK historically, **ads.txt в кабинете 24.08 = Не найдено** пока GSC sitemap не Success  
 - `heic-local.vercel.app` — ownership OK, **на проверке**  
 **Код:** ADS-OS · канон после live-скринов AdSense UI
+
+**GSC FIRST (канон 24.08.2026):** не слать / не ждать AdSense review, пока Search Console property подтверждён и sitemap = Успешно. См. `SEARCH_CONSOLE.md`. Atoll Path доказал: ads.txt «Разрешено» появляется после GSC, не наоборот.
 
 Этот файл — память проекта по монетизации. Связан с 95 Policy, 97 Placement, 98 Playbook, 119 Machine.
 

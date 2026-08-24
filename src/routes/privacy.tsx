@@ -1,13 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AppShell } from "@/components/layout/AppShell";
+import { legalHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/privacy")({
-  head: () => ({
-    meta: [
-      { title: "Privacy Policy — Folio PDF Toolkit" },
-      { name: "description", content: "Folio processes PDFs in your browser. Files are not uploaded or stored." },
-    ],
-  }),
+  head: () =>
+    legalHead({
+      title: "Privacy Policy — Folio PDF Toolkit",
+      description: "Folio processes PDFs in your browser. Files are not uploaded or stored on a server.",
+      path: "/privacy",
+    }),
   component: PrivacyPage,
 });
 

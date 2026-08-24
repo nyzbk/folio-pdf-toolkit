@@ -1,10 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AppShell } from "@/components/layout/AppShell";
+import { legalHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [{ title: "About — Folio PDF Toolkit" }],
-  }),
+  head: () =>
+    legalHead({
+      title: "About — Folio PDF Toolkit",
+      description:
+        "Folio is a free private PDF toolkit. Merge, split and compress in the browser. No upload, no signup, no watermark.",
+      path: "/about",
+    }),
   component: AboutPage,
 });
 

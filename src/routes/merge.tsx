@@ -20,6 +20,7 @@ export const Route = createFileRoute("/merge")({
       title: TITLE,
       description: DESC,
       path: "/merge",
+      canonicalPath: "/",
       appName: "Free PDF Merger",
       faqs: mergeFaq,
       howToName: "How to merge PDF files online",
