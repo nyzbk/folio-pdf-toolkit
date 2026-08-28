@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AppShell } from "@/components/layout/AppShell";
 import { legalHead } from "@/lib/seo";
+import { CONTACT_EMAIL } from "@/lib/site";
 
 export const Route = createFileRoute("/privacy")({
   head: () =>
@@ -17,7 +18,7 @@ function PrivacyPage() {
     <AppShell showTabs={false}>
       <main className="mx-auto max-w-2xl px-4 py-10">
         <h1 className="font-display text-3xl font-medium tracking-tight">Privacy Policy</h1>
-        <p className="mt-2 text-sm text-muted">Last updated: 22 August 2026</p>
+        <p className="mt-2 text-sm text-muted">Last updated: 28 August 2026</p>
         <div className="mt-8 space-y-6 text-sm leading-relaxed text-ink/90">
           <p>
             Folio (the “PDF Toolkit”) is operated so that merge, split and compress happen in your
@@ -37,7 +38,17 @@ function PrivacyPage() {
           <h2 className="font-display text-xl font-medium">Retention</h2>
           <p>We do not retain user PDFs. Server logs are kept for up to 90 days.</p>
           <h2 className="font-display text-xl font-medium">Contact</h2>
-          <p>Questions: use the About page.</p>
+          <p>
+            Questions about this policy:{" "}
+            <a href={`mailto:${CONTACT_EMAIL}`} className="text-copper underline-offset-4 hover:underline">
+              {CONTACT_EMAIL}
+            </a>
+            . Do not email PDFs unless we ask. See also the{" "}
+            <a href="/contact" className="underline-offset-4 hover:underline">
+              contact page
+            </a>
+            .
+          </p>
         </div>
       </main>
     </AppShell>

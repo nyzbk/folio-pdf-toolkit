@@ -1,14 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AppShell } from "@/components/layout/AppShell";
-import { legalHead } from "@/lib/seo";
+import { GuideCtas, Sections } from "@/components/content/Sections";
+import { aboutSections } from "@/content/sections";
+import { articleHead } from "@/lib/seo";
+import { CONTACT_EMAIL } from "@/lib/site";
 
 export const Route = createFileRoute("/about")({
   head: () =>
-    legalHead({
-      title: "About — Folio PDF Toolkit",
+    articleHead({
+      title: "About Folio — local PDF merge, split and compress",
       description:
-        "Folio is a free private PDF toolkit. Merge, split and compress in the browser. No upload, no signup, no watermark.",
+        "Folio is a browser PDF toolkit. Files stay on the device. No account, no watermark, no conversion server.",
       path: "/about",
+      appName: "About Folio",
+      includeApp: false,
     }),
   component: AboutPage,
 });
@@ -17,21 +22,19 @@ function AboutPage() {
   return (
     <AppShell showTabs={false}>
       <main className="mx-auto max-w-2xl px-4 py-10">
-        <h1 className="font-display text-3xl font-medium tracking-tight">About this free tool</h1>
-        <div className="mt-8 space-y-5 text-sm leading-relaxed text-ink/90">
-          <p>
-            Folio is a free PDF toolkit — merge, split and compress — that runs entirely in your
-            browser. Files never leave your device.
-          </p>
-          <p>
-            It is built and maintained as a public utility alongside $10k websites, brand identity
-            systems and custom web applications.
-          </p>
-          <p>
-            Primary actions stay clear of ads. Privacy and a clean mobile layout come first. If you
-            need a custom website or product, say hello through the agency site when it is live.
-          </p>
-        </div>
+        <h1 className="font-display text-3xl font-medium tracking-tight">About Folio</h1>
+        <Sections sections={aboutSections} className="mt-8" />
+        <p className="mt-8 text-sm">
+          Email{" "}
+          <a href={`mailto:${CONTACT_EMAIL}`} className="text-copper underline-offset-4 hover:underline">
+            {CONTACT_EMAIL}
+          </a>
+        </p>
+        <GuideCtas
+          toolHref="/"
+          toolLabel="Merge PDFs"
+          extra={{ href: "/faq", label: "FAQ" }}
+        />
       </main>
     </AppShell>
   );

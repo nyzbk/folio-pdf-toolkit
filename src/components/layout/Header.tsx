@@ -6,7 +6,17 @@ export function Header() {
           <span className="font-display text-xl font-medium tracking-tight text-ink">Folio</span>
           <span className="hidden text-sm text-muted sm:inline">Free PDF Toolkit</span>
         </a>
-        <p className="text-xs text-muted sm:text-sm">No upload. No signup. No watermark.</p>
+        <nav aria-label="Guides" className="flex items-center gap-3 text-xs sm:text-sm">
+          <a href="/faq" className="text-muted no-underline hover:text-ink">
+            FAQ
+          </a>
+          <a href="/how-to-split" className="hidden text-muted no-underline hover:text-ink sm:inline">
+            How-to
+          </a>
+          <a href="/contact" className="text-muted no-underline hover:text-ink">
+            Contact
+          </a>
+        </nav>
       </div>
     </header>
   );

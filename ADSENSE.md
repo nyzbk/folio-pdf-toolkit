@@ -3,7 +3,7 @@
 **Дата:** 22.08.2026  
 **Аккаунт:** `ca-pub-7636435144500691`  
 **Сайты сейчас:**  
-- `folio-pdf-toolkit.vercel.app` — ownership OK historically, **ads.txt в кабинете 24.08 = Не найдено** пока GSC sitemap не Success  
+- `folio-pdf-toolkit.vercel.app` — код + ads.txt live; кабинет 28.08 ads.txt **Не найдено**, статус **Требует проверки**. Контентный слой v1 (how-to/faq/use-cases/contact) выкатывается 28.08. **Не жать Request review сегодня.** GSC sitemap Success + пауза 7 дней после контента.
 - `heic-local.vercel.app` — ownership OK, **на проверке**  
 **Код:** ADS-OS · канон после live-скринов AdSense UI
 

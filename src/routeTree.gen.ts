@@ -12,10 +12,15 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as CompressRouteImport } from './routes/compress'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as HowToCompressRouteImport } from './routes/how-to-compress'
+import { Route as HowToSplitRouteImport } from './routes/how-to-split'
 import { Route as MergeRouteImport } from './routes/merge'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as SplitRouteImport } from './routes/split'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as UseCasesRouteImport } from './routes/use-cases'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -30,6 +35,26 @@ const AboutRoute = AboutRouteImport.update({
 const CompressRoute = CompressRouteImport.update({
   id: '/compress',
   path: '/compress',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowToCompressRoute = HowToCompressRouteImport.update({
+  id: '/how-to-compress',
+  path: '/how-to-compress',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowToSplitRoute = HowToSplitRouteImport.update({
+  id: '/how-to-split',
+  path: '/how-to-split',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MergeRoute = MergeRouteImport.update({
@@ -52,60 +77,113 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const UseCasesRoute = UseCasesRouteImport.update({
+  id: '/use-cases',
+  path: '/use-cases',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/compress': typeof CompressRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/how-to-compress': typeof HowToCompressRoute
+  '/how-to-split': typeof HowToSplitRoute
   '/merge': typeof MergeRoute
   '/privacy': typeof PrivacyRoute
   '/split': typeof SplitRoute
   '/terms': typeof TermsRoute
+  '/use-cases': typeof UseCasesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/compress': typeof CompressRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/how-to-compress': typeof HowToCompressRoute
+  '/how-to-split': typeof HowToSplitRoute
   '/merge': typeof MergeRoute
   '/privacy': typeof PrivacyRoute
   '/split': typeof SplitRoute
   '/terms': typeof TermsRoute
+  '/use-cases': typeof UseCasesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/compress': typeof CompressRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/how-to-compress': typeof HowToCompressRoute
+  '/how-to-split': typeof HowToSplitRoute
   '/merge': typeof MergeRoute
   '/privacy': typeof PrivacyRoute
   '/split': typeof SplitRoute
   '/terms': typeof TermsRoute
+  '/use-cases': typeof UseCasesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/about' | '/compress' | '/merge' | '/privacy' | '/split' | '/terms'
+    | '/'
+    | '/about'
+    | '/compress'
+    | '/contact'
+    | '/faq'
+    | '/how-to-compress'
+    | '/how-to-split'
+    | '/merge'
+    | '/privacy'
+    | '/split'
+    | '/terms'
+    | '/use-cases'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/compress' | '/merge' | '/privacy' | '/split' | '/terms'
+  to:
+    | '/'
+    | '/about'
+    | '/compress'
+    | '/contact'
+    | '/faq'
+    | '/how-to-compress'
+    | '/how-to-split'
+    | '/merge'
+    | '/privacy'
+    | '/split'
+    | '/terms'
+    | '/use-cases'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/compress'
+    | '/contact'
+    | '/faq'
+    | '/how-to-compress'
+    | '/how-to-split'
     | '/merge'
     | '/privacy'
     | '/split'
     | '/terms'
+    | '/use-cases'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   CompressRoute: typeof CompressRoute
+  ContactRoute: typeof ContactRoute
+  FaqRoute: typeof FaqRoute
+  HowToCompressRoute: typeof HowToCompressRoute
+  HowToSplitRoute: typeof HowToSplitRoute
   MergeRoute: typeof MergeRoute
   PrivacyRoute: typeof PrivacyRoute
   SplitRoute: typeof SplitRoute
   TermsRoute: typeof TermsRoute
+  UseCasesRoute: typeof UseCasesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -129,6 +207,34 @@ declare module '@tanstack/react-router' {
       path: '/compress'
       fullPath: '/compress'
       preLoaderRoute: typeof CompressRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-to-compress': {
+      id: '/how-to-compress'
+      path: '/how-to-compress'
+      fullPath: '/how-to-compress'
+      preLoaderRoute: typeof HowToCompressRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-to-split': {
+      id: '/how-to-split'
+      path: '/how-to-split'
+      fullPath: '/how-to-split'
+      preLoaderRoute: typeof HowToSplitRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/merge': {
@@ -159,6 +265,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/use-cases': {
+      id: '/use-cases'
+      path: '/use-cases'
+      fullPath: '/use-cases'
+      preLoaderRoute: typeof UseCasesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -166,10 +279,15 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   CompressRoute: CompressRoute,
+  ContactRoute: ContactRoute,
+  FaqRoute: FaqRoute,
+  HowToCompressRoute: HowToCompressRoute,
+  HowToSplitRoute: HowToSplitRoute,
   MergeRoute: MergeRoute,
   PrivacyRoute: PrivacyRoute,
   SplitRoute: SplitRoute,
   TermsRoute: TermsRoute,
+  UseCasesRoute: UseCasesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

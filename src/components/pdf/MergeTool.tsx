@@ -9,6 +9,8 @@ import { PrivacyNote } from "@/components/pdf/PrivacyNote";
 import { RelatedTools } from "@/components/pdf/RelatedTools";
 import { SuccessDownload } from "@/components/pdf/SuccessDownload";
 import { mergeFaq } from "@/content/faq";
+import { mergeIntro, mergeSections } from "@/content/sections";
+import { Sections, GuideCtas } from "@/components/content/Sections";
 import { inspectPdfFile } from "@/lib/pdf/guard";
 import { mergePdfs } from "@/lib/pdf/merge";
 import { downloadBlob, bytesToBlob, formatBytes, stampFilename } from "@/lib/utils";
@@ -77,12 +79,16 @@ export function MergeTool() {
   return (
     <main className="mx-auto w-full max-w-3xl px-4 py-8">
       <h1 className="font-display text-[1.75rem] font-medium leading-tight tracking-tight sm:text-4xl">
-        Merge PDF files online — free & private
+        Merge PDF files in your browser
       </h1>
       <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
-        Free PDF merger online: combine multiple PDFs into one file in your browser. No upload, no
-        account, no watermark.
+        Combine multiple PDFs into one file on this device. No upload, no account, no watermark.
       </p>
+      {mergeIntro.map((para) => (
+        <p key={para.slice(0, 32)} className="mt-3 max-w-2xl text-sm leading-relaxed text-ink/90">
+          {para}
+        </p>
+      ))}
       <PrivacyNote />
 
       <div className="mt-8">
@@ -121,20 +127,19 @@ export function MergeTool() {
 
       <HowItWorks
         steps={[
-          "Drop or choose two or more PDF files.",
-          "Reorder them with the arrows if needed.",
-          "Tap Merge — processing stays on your device.",
-          "Download the combined PDF. No watermark.",
+          "Drop or choose two or more PDF files. Each file is checked in this tab, not on a server.",
+          "Reorder them with the arrows. The merged PDF follows that list from top to bottom.",
+          "Tap Merge. Pages are copied in memory with pdf-lib. The tab must stay open.",
+          "Download the combined PDF. There is no watermark. Closing the tab discards the bytes.",
         ]}
       />
       <AdUnit slot="mid" className="mt-10" />
-      <section className="mt-14">
-        <h2 className="font-display text-2xl font-medium tracking-tight">Why merge PDFs here</h2>
-        <p className="mt-3 text-sm leading-relaxed text-muted">
-          Most online PDF mergers upload your files. Folio merges PDFs locally so contracts, invoices
-          and scans stay on your device. Reorder pages, then download a single PDF.
-        </p>
-      </section>
+      <Sections sections={mergeSections} />
+      <GuideCtas
+        toolHref="/how-to-split"
+        toolLabel="How to split a PDF"
+        extra={{ href: "/how-to-compress", label: "How to compress without uploading" }}
+      />
       <FaqSection items={mergeFaq} />
       <RelatedTools current="merge" />
     </main>

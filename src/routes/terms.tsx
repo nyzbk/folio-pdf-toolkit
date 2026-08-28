@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AppShell } from "@/components/layout/AppShell";
 import { legalHead } from "@/lib/seo";
+import { CONTACT_EMAIL } from "@/lib/site";
 
 export const Route = createFileRoute("/terms")({
   head: () =>
@@ -17,7 +18,7 @@ function TermsPage() {
     <AppShell showTabs={false}>
       <main className="mx-auto max-w-2xl px-4 py-10">
         <h1 className="font-display text-3xl font-medium tracking-tight">Terms of Service</h1>
-        <p className="mt-2 text-sm text-muted">Last updated: 22 August 2026</p>
+        <p className="mt-2 text-sm text-muted">Last updated: 28 August 2026</p>
         <div className="mt-8 space-y-6 text-sm leading-relaxed text-ink/90">
           <p>By using Folio you agree to these Terms and the Privacy Policy.</p>
           <p>
@@ -30,6 +31,13 @@ function TermsPage() {
           </p>
           <p>Do not use the tools to process illegal content or to attack the service.</p>
           <p>Output files belong to you. The tool’s design and code belong to us.</p>
+          <p>
+            Questions:{" "}
+            <a href={`mailto:${CONTACT_EMAIL}`} className="text-copper underline-offset-4 hover:underline">
+              {CONTACT_EMAIL}
+            </a>
+            . Do not send the PDF unless we ask.
+          </p>
         </div>
       </main>
     </AppShell>

@@ -9,6 +9,8 @@ import { PrivacyNote } from "@/components/pdf/PrivacyNote";
 import { RelatedTools } from "@/components/pdf/RelatedTools";
 import { SuccessDownload } from "@/components/pdf/SuccessDownload";
 import { compressFaq } from "@/content/faq";
+import { compressIntro, compressSections } from "@/content/sections";
+import { GuideCtas, Sections } from "@/components/content/Sections";
 import { compressPdf, type CompressQuality } from "@/lib/pdf/compress";
 import { inspectPdfFile } from "@/lib/pdf/guard";
 import { downloadBlob, bytesToBlob, formatBytes, stampFilename } from "@/lib/utils";
@@ -98,11 +100,16 @@ export function CompressTool() {
   return (
     <main className="mx-auto w-full max-w-3xl px-4 py-8">
       <h1 className="font-display text-[1.75rem] font-medium leading-tight tracking-tight sm:text-4xl">
-        Compress PDF online — reduce size free
+        Compress a PDF in your browser
       </h1>
       <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
-        Free PDF compressor online. Shrink PDF file size in your browser — no account, no upload.
+        Rewrite a PDF locally to trim structure and metadata. No upload. Scans of paper may not shrink.
       </p>
+      {compressIntro.map((para) => (
+        <p key={para.slice(0, 32)} className="mt-3 max-w-2xl text-sm leading-relaxed text-ink/90">
+          {para}
+        </p>
+      ))}
       <PrivacyNote />
 
       <div className="mt-8">
@@ -159,20 +166,19 @@ export function CompressTool() {
 
       <HowItWorks
         steps={[
-          "Drop one or more PDFs.",
-          "Pick High, Balanced, or Maximum.",
-          "Tap Compress — rewriting happens on your device.",
-          "Compare original vs new size and download.",
+          "Drop one or more PDFs. Each file is checked in this tab. Passwords are refused.",
+          "Pick High to keep metadata, Balanced as the default, or Maximum to drop title and author.",
+          "Tap Compress. Pages are copied in memory. Image scans are not downsampled.",
+          "Compare original vs new size. Download only if the saving is worth the rewrite.",
         ]}
       />
       <AdUnit slot="mid" className="mt-10" />
-      <section className="mt-14">
-        <h2 className="font-display text-2xl font-medium tracking-tight">Compress PDF privately</h2>
-        <p className="mt-3 text-sm leading-relaxed text-muted">
-          High quality keeps structure. Balanced and Maximum strip extra metadata and unused objects.
-          Text stays selectable. Compare original size vs new size before you download.
-        </p>
-      </section>
+      <Sections sections={compressSections} />
+      <GuideCtas
+        toolHref="/how-to-compress"
+        toolLabel="Full guide: compress without uploading"
+        extra={{ href: "/use-cases", label: "When Gmail refuses a brochure" }}
+      />
       <FaqSection items={compressFaq} />
       <RelatedTools current="compress" />
     </main>

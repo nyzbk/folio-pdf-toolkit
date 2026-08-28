@@ -1,14 +1,17 @@
 import type { FaqItem } from "@/components/pdf/FaqSection";
 import { SITE_NAME, SITE_ORIGIN, absUrl } from "@/lib/site";
 
-export function jsonLdScripts(opts: {
+type JsonLdOpts = {
   appName: string;
   path: string;
   description: string;
-  faqs: FaqItem[];
-  howToName: string;
-  howToSteps: string[];
-}) {
+  faqs?: FaqItem[];
+  howToName?: string;
+  howToSteps?: string[];
+  includeApp?: boolean;
+};
+
+export function jsonLdScripts(opts: JsonLdOpts) {
   const url = absUrl(opts.path);
   const website = {
     "@context": "https://schema.org",
@@ -38,45 +41,58 @@ export function jsonLdScripts(opts: {
         : []),
     ],
   };
-  const app = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    name: opts.appName,
-    url,
-    applicationCategory: "UtilitiesApplication",
-    operatingSystem: "Any",
-    browserRequirements: "Requires JavaScript",
-    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-    description: opts.description,
-    featureList: ["Merge PDF", "Split PDF", "Compress PDF", "No upload", "No signup"],
-  };
-  const faq = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: opts.faqs.map((item) => ({
-      "@type": "Question",
-      name: item.q,
-      acceptedAnswer: { "@type": "Answer", text: item.a },
-    })),
-  };
-  const howTo = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    name: opts.howToName,
-    description: opts.description,
-    step: opts.howToSteps.map((text, i) => ({
-      "@type": "HowToStep",
-      position: i + 1,
-      text,
-    })),
-  };
-  return [
+  const scripts: { type: string; children: string }[] = [
     { type: "application/ld+json", children: JSON.stringify(website) },
     { type: "application/ld+json", children: JSON.stringify(breadcrumb) },
-    { type: "application/ld+json", children: JSON.stringify(app) },
-    { type: "application/ld+json", children: JSON.stringify(faq) },
-    { type: "application/ld+json", children: JSON.stringify(howTo) },
   ];
+  if (opts.includeApp !== false) {
+    scripts.push({
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        name: opts.appName,
+        url,
+        applicationCategory: "UtilitiesApplication",
+        operatingSystem: "Any",
+        browserRequirements: "Requires JavaScript",
+        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        description: opts.description,
+        featureList: ["Merge PDF", "Split PDF", "Compress PDF", "No upload", "No signup"],
+      }),
+    });
+  }
+  if (opts.faqs?.length) {
+    scripts.push({
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: opts.faqs.map((item) => ({
+          "@type": "Question",
+          name: item.q,
+          acceptedAnswer: { "@type": "Answer", text: item.a },
+        })),
+      }),
+    });
+  }
+  if (opts.howToName && opts.howToSteps?.length) {
+    scripts.push({
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        name: opts.howToName,
+        description: opts.description,
+        step: opts.howToSteps.map((text, i) => ({
+          "@type": "HowToStep",
+          position: i + 1,
+          text,
+        })),
+      }),
+    });
+  }
+  return scripts;
 }
 
 export function toolHead(opts: {
@@ -97,6 +113,27 @@ export function toolHead(opts: {
       { name: "robots", content: "index, follow, max-image-preview:large" },
     ],
     links: [{ rel: "canonical", href: canonical }],
+    scripts: jsonLdScripts(opts),
+  };
+}
+
+export function articleHead(opts: {
+  title: string;
+  description: string;
+  path: string;
+  appName: string;
+  faqs?: FaqItem[];
+  howToName?: string;
+  howToSteps?: string[];
+  includeApp?: boolean;
+}) {
+  return {
+    meta: [
+      { title: opts.title },
+      { name: "description", content: opts.description },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+    ],
+    links: [{ rel: "canonical", href: absUrl(opts.path) }],
     scripts: jsonLdScripts(opts),
   };
 }

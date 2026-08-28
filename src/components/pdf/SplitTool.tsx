@@ -9,6 +9,8 @@ import { PrivacyNote } from "@/components/pdf/PrivacyNote";
 import { RelatedTools } from "@/components/pdf/RelatedTools";
 import { SuccessDownload } from "@/components/pdf/SuccessDownload";
 import { splitFaq } from "@/content/faq";
+import { splitIntro, splitSections } from "@/content/sections";
+import { GuideCtas, Sections } from "@/components/content/Sections";
 import { inspectPdfFile } from "@/lib/pdf/guard";
 import {
   groupsEveryN,
@@ -97,11 +99,16 @@ export function SplitTool() {
   return (
     <main className="mx-auto w-full max-w-3xl px-4 py-8">
       <h1 className="font-display text-[1.75rem] font-medium leading-tight tracking-tight sm:text-4xl">
-        Split PDF online — extract pages free
+        Split a PDF in your browser
       </h1>
       <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
-        Free PDF splitter: extract page ranges or split every page. Runs entirely in your browser.
+        Extract page ranges, equal chunks, or one file per page. The source never leaves this device.
       </p>
+      {splitIntro.map((para) => (
+        <p key={para.slice(0, 32)} className="mt-3 max-w-2xl text-sm leading-relaxed text-ink/90">
+          {para}
+        </p>
+      ))}
       <PrivacyNote />
 
       <div className="mt-8">
@@ -180,20 +187,19 @@ export function SplitTool() {
 
       <HowItWorks
         steps={[
-          "Drop one PDF.",
-          "Choose ranges, every N pages, or one file per page.",
-          "Tap Split — pages are extracted on your device.",
-          "Download a PDF or a ZIP of the parts.",
+          "Drop one PDF. Folio counts pages in this tab and refuses passwords and non-PDFs.",
+          "Choose ranges for one smaller file, every N pages for chunks, or one PDF per page for a ZIP.",
+          "Tap Split. Pages are copied locally. Keep the tab open until the download is ready.",
+          "Download a PDF or a ZIP. Closing the tab discards the parts from memory.",
         ]}
       />
       <AdUnit slot="mid" className="mt-10" />
-      <section className="mt-14">
-        <h2 className="font-display text-2xl font-medium tracking-tight">Split PDF without uploading</h2>
-        <p className="mt-3 text-sm leading-relaxed text-muted">
-          Use page ranges like 1-3, 5, 8-10, split every N pages, or export one PDF per page. Output
-          downloads as a PDF or a ZIP — still on your device.
-        </p>
-      </section>
+      <Sections sections={splitSections} />
+      <GuideCtas
+        toolHref="/how-to-split"
+        toolLabel="Full guide: split a PDF without uploading"
+        extra={{ href: "/", label: "Merge the parts again" }}
+      />
       <FaqSection items={splitFaq} />
       <RelatedTools current="split" />
     </main>
