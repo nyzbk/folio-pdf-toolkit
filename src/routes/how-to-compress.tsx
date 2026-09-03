@@ -27,7 +27,7 @@ function HowToCompressPage() {
       guide={compressGuide}
       toolHref="/compress"
       toolLabel="Open the compressor"
-      extra={{ href: "/how-to-split", label: "How to split a PDF" }}
+      extra={{ href: "/email", label: "Email size limits" }}
     >
       <FaqSection items={compressFaq} />
     </GuidePage>

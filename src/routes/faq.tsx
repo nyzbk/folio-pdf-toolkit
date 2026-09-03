@@ -33,12 +33,24 @@ function FaqPage() {
             Contact
           </a>
           {" · "}
+          <a href="/how-to-merge" className="text-copper underline-offset-4 hover:underline">
+            Merge guide
+          </a>
+          {" · "}
           <a href="/how-to-split" className="text-copper underline-offset-4 hover:underline">
             Split guide
           </a>
           {" · "}
           <a href="/how-to-compress" className="text-copper underline-offset-4 hover:underline">
             Compress guide
+          </a>
+          {" · "}
+          <a href="/email" className="text-copper underline-offset-4 hover:underline">
+            Email size
+          </a>
+          {" · "}
+          <a href="/scan" className="text-copper underline-offset-4 hover:underline">
+            Scans
           </a>
         </p>
       </main>

@@ -8,9 +8,9 @@ import { AdUnit } from "@/components/ads/AdUnit";
 export const Route = createFileRoute("/use-cases")({
   head: () =>
     articleHead({
-      title: "Folio use cases — landlord packet, NDA page, Gmail brochure",
+      title: "Folio use cases — portal packets, Gmail brochures, chat caps",
       description:
-        "Three real PDF jobs: merge a portal packet, extract a signature page, shrink a digital brochure without uploading.",
+        "Six real PDF jobs: portal packets, signature pages, Gmail brochures, HR uploads, chat caps, print vs mail. Local merge, split, compress. No upload.",
       path: "/use-cases",
       appName: "Folio use cases",
       includeApp: false,
@@ -24,7 +24,7 @@ function UseCasesPage() {
       <article className="mx-auto max-w-2xl px-4 py-10">
         <h1 className="font-display text-3xl font-medium tracking-tight">When to use Folio</h1>
         <p className="mt-4 text-sm leading-relaxed text-ink/90">
-          Three jobs that match merge, split and compress. If your document needs OCR, Word export or
+          Six jobs that match merge, split and compress. If your document needs OCR, Word export or
           a fillable form rebuilt, this is the wrong site.
         </p>
         <Sections sections={useCaseSections} className="mt-8" />

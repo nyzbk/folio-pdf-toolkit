@@ -27,7 +27,7 @@ function HowToSplitPage() {
       guide={splitGuide}
       toolHref="/split"
       toolLabel="Open the splitter"
-      extra={{ href: "/how-to-compress", label: "How to compress a PDF" }}
+      extra={{ href: "/how-to-merge", label: "How to merge PDFs" }}
     >
       <FaqSection items={splitFaq} />
     </GuidePage>

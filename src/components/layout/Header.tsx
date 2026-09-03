@@ -6,15 +6,21 @@ export function Header() {
           <span className="font-display text-xl font-medium tracking-tight text-ink">Folio</span>
           <span className="hidden text-sm text-muted sm:inline">Free PDF Toolkit</span>
         </a>
-        <nav aria-label="Guides" className="flex items-center gap-3 text-xs sm:text-sm">
+        <nav aria-label="PDF guides" className="flex flex-wrap items-center justify-end gap-x-3 gap-y-1 text-xs sm:text-sm">
+          <a href="/split" className="text-muted no-underline hover:text-ink">
+            Split
+          </a>
+          <a href="/compress" className="text-muted no-underline hover:text-ink">
+            Compress
+          </a>
+          <a href="/email" className="text-muted no-underline hover:text-ink">
+            Email
+          </a>
+          <a href="/scan" className="hidden text-muted no-underline hover:text-ink sm:inline">
+            Scans
+          </a>
           <a href="/faq" className="text-muted no-underline hover:text-ink">
             FAQ
-          </a>
-          <a href="/how-to-split" className="hidden text-muted no-underline hover:text-ink sm:inline">
-            How-to
-          </a>
-          <a href="/contact" className="text-muted no-underline hover:text-ink">
-            Contact
           </a>
         </nav>
       </div>
