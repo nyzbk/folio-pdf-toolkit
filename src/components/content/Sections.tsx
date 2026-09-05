@@ -14,9 +14,11 @@ export function Sections({ sections, className = "mt-14" }: { sections: CopySect
             <h2 className="font-display text-2xl font-medium tracking-tight">{section.h2}</h2>
           ) : null}
           {section.p.map((para) => (
-            <p key={para.slice(0, 48)} className="mt-3 text-sm leading-relaxed text-ink/90">
-              <RichText text={para} />
-            </p>
+            <RichText
+              key={para.slice(0, 48)}
+              text={para}
+              className="mt-3 text-sm leading-relaxed text-ink/90"
+            />
           ))}
         </section>
       ))}
@@ -40,9 +42,7 @@ export function StepList({
             <h3 className="font-medium text-ink">
               {i + 1}. {step.title}
             </h3>
-            <p className="mt-2 text-ink/90">
-              <RichText text={step.body} />
-            </p>
+            <RichText text={step.body} className="mt-2 text-ink/90" />
           </li>
         ))}
       </ol>

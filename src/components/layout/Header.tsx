@@ -13,14 +13,14 @@ export function Header() {
           <a href="/compress" className="text-muted no-underline hover:text-ink">
             Compress
           </a>
-          <a href="/how-to-merge" className="hidden text-muted no-underline hover:text-ink md:inline">
-            How to
-          </a>
           <a href="/email" className="text-muted no-underline hover:text-ink">
             Email
           </a>
-          <a href="/scan" className="hidden text-muted no-underline hover:text-ink sm:inline">
+          <a href="/scan" className="text-muted no-underline hover:text-ink">
             Scans
+          </a>
+          <a href="/whatsapp" className="hidden text-muted no-underline hover:text-ink sm:inline">
+            WhatsApp
           </a>
           <a href="/faq" className="text-muted no-underline hover:text-ink">
             FAQ

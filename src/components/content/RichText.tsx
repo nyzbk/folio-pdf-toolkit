@@ -1,31 +1,65 @@
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 
-/** Inline Folio links: [Email size](/email) or [mail](mailto:…). External http is left as text. */
-const TOKEN = /\[([^\]]+)\]\((\/[^\s)]+|mailto:[^\s)]+)\)/g;
+const TOKEN = /(\[[^\]]+\]\([^)]+\))/g;
 
-export function stripMdLinks(text: string): string {
-  return text.replace(TOKEN, "$1");
+export function stripMarkdownLinks(text: string) {
+  return text.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
 }
 
-export function RichText({ text }: { text: string }) {
-  const nodes: ReactNode[] = [];
-  let last = 0;
-  let key = 0;
-  const re = new RegExp(TOKEN.source, "g");
-  let match: RegExpExecArray | null;
-  while ((match = re.exec(text)) !== null) {
-    if (match.index > last) nodes.push(text.slice(last, match.index));
-    nodes.push(
+export const stripMdLinks = stripMarkdownLinks;
+
+export function richNodes(text: string): ReactNode[] {
+  return text.split(TOKEN).map((part, i) => {
+    const m = /^\[([^\]]+)\]\(([^)]+)\)$/.exec(part);
+    if (!m) return <Fragment key={i}>{part}</Fragment>;
+    const href = m[2];
+    const external = /^https?:\/\//.test(href);
+    return (
       <a
-        key={`n${key++}`}
-        href={match[2]}
-        className="text-copper underline underline-offset-4 hover:text-ink"
+        key={i}
+        href={href}
+        className="font-medium text-copper underline-offset-4 hover:underline"
+        {...(external ? { rel: "noopener noreferrer" } : {})}
       >
-        {match[1]}
-      </a>,
+        {m[1]}
+      </a>
     );
-    last = match.index + match[0].length;
-  }
-  if (last < text.length) nodes.push(text.slice(last));
-  return <>{nodes}</>;
+  });
+}
+
+export function RichText({
+  text,
+  as: Tag = "p",
+  className,
+}: {
+  text: string;
+  as?: "p" | "span" | "li" | "h3";
+  className?: string;
+}) {
+  return <Tag className={className}>{richNodes(text)}</Tag>;
+}
+
+export function A({ href, children }: { href: string; children: ReactNode }) {
+  const external = /^https?:\/\//.test(href);
+  return (
+    <a
+      href={href}
+      className="font-medium text-copper underline-offset-4 hover:underline"
+      {...(external ? { rel: "noopener noreferrer" } : {})}
+    >
+      {children}
+    </a>
+  );
+}
+
+export function P({ children }: { children: ReactNode }) {
+  return <p className="mt-4 text-sm leading-relaxed text-ink/90">{children}</p>;
+}
+
+export function H2({ children }: { children: ReactNode }) {
+  return <h2 className="mt-10 font-display text-2xl font-medium tracking-tight">{children}</h2>;
+}
+
+export function H3({ children }: { children: ReactNode }) {
+  return <h3 className="mt-6 text-sm font-medium text-ink">{children}</h3>;
 }

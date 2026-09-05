@@ -1,8 +1,9 @@
 import type { ReactNode } from "react";
 import { AppShell } from "@/components/layout/AppShell";
 import { GuideCtas, Sections, StepList, type CopySection } from "@/components/content/Sections";
-import { RichText } from "@/components/content/RichText";
 import { AdUnit } from "@/components/ads/AdUnit";
+import { RichText } from "@/components/content/RichText";
+import { RelatedGuides } from "@/components/content/RelatedGuides";
 
 type Guide = {
   title: string;
@@ -18,28 +19,33 @@ export function GuidePage({
   toolLabel,
   extra,
   children,
+  related,
 }: {
   guide: Guide;
   toolHref: string;
   toolLabel: string;
   extra?: { href: string; label: string };
   children?: ReactNode;
+  related?: string;
 }) {
   return (
     <AppShell showTabs={false}>
-      <article className="mx-auto max-w-2xl px-4 py-10">
+      <article className="folio-article mx-auto max-w-2xl px-4 py-10">
         <h1 className="font-display text-3xl font-medium tracking-tight">{guide.title}</h1>
         <p className="mt-4 text-base leading-relaxed text-ink/90">{guide.lede}</p>
         {guide.intro.map((para) => (
-          <p key={para.slice(0, 40)} className="mt-4 text-sm leading-relaxed text-ink/90">
-            <RichText text={para} />
-          </p>
+          <RichText
+            key={para.slice(0, 40)}
+            text={para}
+            className="mt-4 text-sm leading-relaxed text-ink/90"
+          />
         ))}
         <GuideCtas toolHref={toolHref} toolLabel={toolLabel} extra={extra} />
         <StepList title="Steps" steps={guide.steps} />
         <AdUnit slot="mid" className="mt-10" />
         <Sections sections={guide.after} className="mt-10" />
         {children}
+        <RelatedGuides current={related} />
         <GuideCtas toolHref={toolHref} toolLabel={toolLabel} extra={extra} />
       </article>
     </AppShell>

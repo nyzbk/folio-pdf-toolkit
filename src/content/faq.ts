@@ -62,25 +62,35 @@ export const folioFaq: FaqItem[] = [
 
 export const qGmail: FaqItem = {
   q: "Gmail said my PDF is too large. What should I click?",
-  a: "If you can select text in the PDF, open [Compress](/compress) and try Balanced, then Maximum. If you cannot select text, it is probably a scan — Compress will barely help. [Split](/split) out the pages the recipient needs, or recapture the paper at a smaller size. Folio does not email the file and does not give you a Drive link. The long version is the [email size guide](/email).",
+  a: "If you can select text in the PDF, open [Compress](/compress) and try Balanced, then Maximum. If you cannot select text, it is probably a scan — Compress will barely help. [Split](/split) out the pages the recipient needs, or recapture the paper at a smaller size. Folio does not email the file and does not give you a Drive link. Details: the [email size guide](/email).",
 };
 
 export const qScanShrink: FaqItem = {
   q: "Will Folio shrink a scanned ID or a stack of photographed pages?",
-  a: "Almost never in a way that matters. Those files are heavy because of the pictures inside, not because of PDF metadata. Folio does not downsample images and does not OCR. Split if you only need some pages. See the [scans guide](/scan). Do not upload an ID to a random compressor.",
+  a: "Almost never in a way that matters. Those files are heavy because of the pictures inside, not because of PDF metadata. Folio does not downsample images and does not OCR. [Split](/split) if you only need some pages. See the [scans guide](/scan). Do not upload an ID to a random compressor.",
 };
 
 export const qPrintShop: FaqItem = {
   q: "Can I print the merged file at a shop?",
-  a: "You can download it and take it to a shop. Folio does not produce PDF/X or PDF/A on purpose. Page sizes are not forced to one paper size. A phone-photo PDF merged with an A4 lease may look odd on a plotter. For a press-ready brochure, keep the layout export. Folio output is for packets and mail, not a new print master. That split of jobs is also in [use cases](/use-cases).",
+  a: "You can download it and take it to a shop. Folio does not produce PDF/X or PDF/A on purpose. Page sizes are not forced to one paper size. A phone-photo PDF merged with an A4 lease may look odd on a plotter. For a press-ready brochure, keep the layout export. Folio output is for packets and mail, not a new print master.",
 };
 
 export const qAttachSize: FaqItem = {
   q: "What attachment size should I aim for?",
-  a: "There is no single number. Gmail often fails near 25 MB — details on [email size](/email). Some portals say 10 MB. WhatsApp document sends are frequently lower. Aim under the cap the recipient named. Folio’s own guard is 80 MB per input file so a phone tab survives — that is not an email cap.",
+  a: "There is no single number. Gmail often fails near 25 MB of message size, and MIME encoding adds roughly a third, so a 22 MB file on disk can bounce. Some portals say 10 MB or 2 MB. WhatsApp document sends are frequently lower — that is the [WhatsApp guide](/whatsapp), not this FAQ line. Aim under the cap the recipient named. Folio’s own guard is 80 MB per input file so a phone tab survives — that is not an email cap. Walkthrough: [email size](/email).",
 };
 
-folioFaq.push(qGmail, qScanShrink, qPrintShop, qAttachSize);
+export const qWhatsApp: FaqItem = {
+  q: "WhatsApp said it could not send my PDF. Is that the same as Gmail?",
+  a: "No. Chat clients fail earlier, on phones, and when you share a PDF as a photo. Share as a document from Files, not from the camera roll. If you can select text, [compress](/compress) here first. If you cannot, [split](/split) or recapture — see [scans](/scan). Full walkthrough: [send a PDF in WhatsApp](/whatsapp). Folio does not send into the chat for you.",
+};
+
+export const qMime: FaqItem = {
+  q: "My PDF is 22 MB. Why does Gmail still refuse it?",
+  a: "Mail encodes attachments in MIME, which adds about a third. A 22 MB file can leave as a 29 MB message. Aim under 18–19 MB if you want the send to be boring. Folio cannot strip MIME. [Compress](/compress) a digital export, or [split](/split) pages. Details in the [email size guide](/email).",
+};
+
+folioFaq.push(qGmail, qScanShrink, qPrintShop, qAttachSize, qWhatsApp, qMime);
 
 
 export const mergeFaq: FaqItem[] = [
@@ -88,7 +98,7 @@ export const mergeFaq: FaqItem[] = [
   folioFaq[1]!,
   {
     q: "Can I reorder files before merging?",
-    a: "Yes. After you add PDFs, use the up and down controls on each row. The merged file follows that list from top to bottom: first file’s pages, then the next file’s pages, and so on. We do not interleave pages from two files automatically. If you need page 1 of B between pages of A, split A first, then merge the pieces in the order you want.",
+    a: "Yes. After you add PDFs, use the up and down controls on each row. The merged file follows that list from top to bottom: first file’s pages, then the next file’s pages, and so on. We do not interleave pages from two files automatically. If you need page 1 of B between pages of A, [split](/split) A first, then merge the pieces in the order you want.",
   },
   folioFaq[4]!,
   folioFaq[5]!,
@@ -98,6 +108,7 @@ export const mergeFaq: FaqItem[] = [
   folioFaq[13]!,
   qGmail,
   qPrintShop,
+  qMime,
 ];
 
 export const splitFaq: FaqItem[] = [
@@ -140,6 +151,7 @@ export const emailFaq: FaqItem[] = [
   folioFaq[2]!,
   qGmail,
   qAttachSize,
+  qMime,
   folioFaq[7]!,
   folioFaq[6]!,
   folioFaq[11]!,
@@ -152,6 +164,17 @@ export const scanFaq: FaqItem[] = [
   folioFaq[8]!,
   qScanShrink,
   folioFaq[5]!,
+  folioFaq[4]!,
+  folioFaq[11]!,
+  folioFaq[13]!,
+];
+
+export const whatsappFaq: FaqItem[] = [
+  folioFaq[0]!,
+  folioFaq[2]!,
+  qWhatsApp,
+  qScanShrink,
+  qAttachSize,
   folioFaq[4]!,
   folioFaq[11]!,
   folioFaq[13]!,

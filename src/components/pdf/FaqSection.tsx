@@ -15,9 +15,7 @@ export function FaqSection({ items }: { items: FaqItem[] }) {
                 <span className="text-subtle transition group-open:rotate-45">+</span>
               </span>
             </summary>
-            <p className="mt-3 text-sm leading-relaxed text-muted">
-              <RichText text={item.a} />
-            </p>
+            <RichText text={item.a} className="mt-3 text-sm leading-relaxed text-muted" />
           </details>
         ))}
       </div>

@@ -31,6 +31,11 @@ const GUIDES = [
     blurb: "A photograph of paper will not collapse here. Split pages or recapture.",
   },
   {
+    href: "/whatsapp",
+    title: "Send a PDF in WhatsApp",
+    blurb: "Document versus photo. Chat caps are not Gmail caps.",
+  },
+  {
     href: "/how-to-merge",
     title: "How to merge PDFs",
     blurb: "Join files in this tab. No account, no watermark, no conversion server.",

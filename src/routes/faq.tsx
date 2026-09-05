@@ -52,6 +52,10 @@ function FaqPage() {
           <a href="/scan" className="text-copper underline-offset-4 hover:underline">
             Scans
           </a>
+          {" · "}
+          <a href="/whatsapp" className="text-copper underline-offset-4 hover:underline">
+            WhatsApp
+          </a>
         </p>
       </main>
     </AppShell>

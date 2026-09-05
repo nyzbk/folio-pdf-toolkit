@@ -10,6 +10,7 @@ const LINKS = [
   { href: "/how-to-compress", label: "How to compress" },
   { href: "/email", label: "Email size" },
   { href: "/scan", label: "Scans" },
+  { href: "/whatsapp", label: "WhatsApp" },
   { href: "/faq", label: "FAQ" },
   { href: "/use-cases", label: "Use cases" },
   { href: "/about", label: "About" },
