@@ -13,6 +13,9 @@ export function Header() {
           <a href="/compress" className="text-muted no-underline hover:text-ink">
             Compress
           </a>
+          <a href="/how-to-merge" className="hidden text-muted no-underline hover:text-ink md:inline">
+            How to
+          </a>
           <a href="/email" className="text-muted no-underline hover:text-ink">
             Email
           </a>

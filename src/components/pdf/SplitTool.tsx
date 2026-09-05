@@ -198,7 +198,7 @@ export function SplitTool() {
       <GuideCtas
         toolHref="/how-to-split"
         toolLabel="Full guide: split a PDF without uploading"
-        extra={{ href: "/", label: "Merge the parts again" }}
+        extra={{ href: "/scan", label: "If it is a scan, not extra pages" }}
       />
       <FaqSection items={splitFaq} />
       <RelatedTools current="split" />

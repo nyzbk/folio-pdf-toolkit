@@ -34,8 +34,8 @@ export const mergeSections: CopySection[] = [
     h2: "When to split or compress instead",
     p: [
       "Extract pages or cut a report into chapters on the Split tab. Range mode builds one PDF of the pages you listed; ‘one PDF per page’ writes a ZIP. After a split you can return here and merge a different subset.",
-      "If Gmail or a portal refuses the merged file for size, open Compress. Expect savings on digital exports (Word, invoices, slides). Do not expect a 40 MB photograph of paper to collapse — Folio does not recompress those images. Guides: how to split a PDF in the browser, and how to compress without uploading.",
-      "Gmail still refuses many packets around 25 MB — open /email. A photograph of paper will not shrink here — open /scan. Step-by-step merge: /how-to-merge.",
+      "If Gmail or a portal refuses the merged file for size, open [Compress](/compress). Expect savings on digital exports (Word, invoices, slides). Do not expect a 40 MB photograph of paper to collapse — Folio does not recompress those images. Guides: [how to split a PDF](/how-to-split), and [how to compress without uploading](/how-to-compress).",
+      "Gmail still refuses many packets around 25 MB — that job is [email size limits](/email). A photograph of paper will not shrink here — [why scans barely shrink](/scan). Step-by-step merge: [how to merge PDF files](/how-to-merge).",
     ],
   },
 ];
@@ -58,7 +58,7 @@ export const splitSections: CopySection[] = [
     p: [
       "It does not crop a page, redact a paragraph, or remove a letterhead. It does not read bookmarks as chapter names. It does not unlock a password. A one-page PDF has nothing to split; you will get an error or a single-page result depending on the mode.",
       `Files over ${MAX_PDF_MB} MB are refused. Very large page counts can exhaust a phone. If Safari reloads, use a desktop browser. After you download, close the tab — the original and the parts are gone from Folio’s memory because they only ever lived there.`,
-      "A scan that is too heavy for mail is often a split job, not a compress job — open /scan. Attachment caps: /email. After you have the pages you need, merge them on the homepage.",
+      "A scan that is too heavy for mail is often a split job, not a compress job — [why scanned PDFs barely shrink](/scan). Attachment caps: [email size](/email). After you have the pages you need, [merge them on the homepage](/).",
     ],
   },
 ];
@@ -81,7 +81,7 @@ export const compressSections: CopySection[] = [
     p: [
       "High is the conservative rewrite: keep metadata, skip object streams. Use it when a picky portal hashes files or when you want the smallest behaviour change. Balanced is the default for invoices, letters and slide decks. Maximum is the same rewrite as Balanced for page content, with metadata cleared — pick it when title/author do not matter and you want the tightest save Folio offers.",
       "You can drop several PDFs and get a ZIP of compressed copies. Each file still has to pass the size guard on its own. If a phone tab dies, do one file on a laptop instead of five on the phone.",
-      "Gmail and Outlook caps: /email. If before and after look alike, the file is probably a scan — /scan. Compress does not merge files; that is the homepage.",
+      "Gmail and Outlook caps: [email size](/email). If before and after look alike, the file is probably a scan — [scans](/scan). Compress does not merge files; that is the [homepage](/).",
     ],
   },
 ];
@@ -101,9 +101,9 @@ export const aboutSections: CopySection[] = [
       "Folio is one domain and one job. The three tabs — merge, split, compress — are the product. Guides on this hostname exist so a person and a crawler can tell what the tool will refuse: passwords, OCR, Word export, cloud links, and miracle shrinkage of photographs of paper.",
       "We publish other local utilities on other hostnames. They are not a toolkit inside this header. This site does not catalogue HEIC converters, invoice generators or QR codes. If you followed a link from a portfolio hub, you should still land on a PDF job, not a storefront.",
       "The operator email is the same inbox as the ads-account contact. A broken PDF or a policy question should reach a human. There is no ticket robot and no chat overlay on the drop zone. Do not attach the document in the first mail.",
-      "This content layer was expanded on 3 September 2026 with an email-size guide, a scans guide, and a merge how-to. The merge, split and compress engines did not change. Advertisement slots stay placeholders until Google marks the site Ready. Please do not click them as a test.",
+      "This content layer was expanded on 3 September 2026 with an email-size guide, a scans guide, and a merge how-to. On 5 September 2026 those articles gained in-body links to each other so a person and a crawler can move between jobs without guessing. The merge, split and compress engines did not change. Advertisement slots stay placeholders until Google marks the site Ready. Please do not click them as a test.",
       "If Folio cannot do the job, the page should say so. That refusal is part of the product. A site that pretends every PDF problem is a button is the kind of site Program policies call low-value. We would rather be small and true.",
-      "Password-protected PDFs are refused rather than unlocked. Files over 80 MB are refused rather than half-processed. There is no OCR in this tab and no API that would send a scan off the device. Those three refusals are documented on /scan and in the FAQ so a reviewer does not have to guess.",
+      "Password-protected PDFs are refused rather than unlocked. Files over 80 MB are refused rather than half-processed. There is no OCR in this tab and no API that would send a scan off the device. Those three refusals are documented on the [scans guide](/scan) and in the [FAQ](/faq) so a reviewer does not have to guess.",
     ],
   },
 ];
@@ -162,14 +162,14 @@ export const useCaseSections: CopySection[] = [
       "Keep fillable HR forms out of this merge if you still need to type into them. Folio copies pages and often drops the form catalog. Flatten the official form first, or upload that form in a second field if the portal allows it.",
       "Order mistakes are common. If the ID lands between diploma pages, use the arrows before Merge. Page sizes will not be normalized: an A4 transcript plus a phone-photo ID may look uneven. Portals rarely care. Print shops do. This packet is for the portal, not for a plotter.",
       "Do not upload the ID ‘to a better merger’ because Folio felt slow on a phone. A slow tab is RAM. Use a laptop. Closing the tab discards the bytes. Keep the five originals; Folio is not an archive.",
-      "If after merge the portal still rejects size, open the Email guide. If the weight is the diploma photograph, open the Scans guide. Do not loop Compress on the merged packet hoping the picture will collapse.",
+      "If after merge the portal still rejects size, open the [email size guide](/email). If the weight is the diploma photograph, open the [scans guide](/scan). Do not loop Compress on the merged packet hoping the picture will collapse.",
     ],
   },
   {
     h2: "WhatsApp or Telegram will not send the PDF",
     p: [
-      "Chat apps are harsher than Gmail. A 12 MB slide deck can fail on mobile data. A 4 MB scan of handwritten notes can fail because the other person’s client is old. Folio does not send into WhatsApp. You compress or split here, download, then attach in the chat app yourself.",
-      "If you can select text in the deck, open Compress, Balanced first. Read before/after. If it barely moved, the deck is full of photos of slides — that is a scan-like file even if it came from PowerPoint with ‘save as PDF’ after photographing a whiteboard.",
+      "Chat apps are harsher than Gmail. A 12 MB slide deck can fail on mobile data. A 4 MB scan of handwritten notes can fail because the other person’s client is old. Folio does not send into WhatsApp. You [compress](/compress) or [split](/split) here, download, then attach in the chat app yourself.",
+      "If you can select text in the deck, open [Compress](/compress), Balanced first. Read before/after. If it barely moved, the deck is full of photos of slides — that is a scan-like file even if it came from PowerPoint with ‘save as PDF’ after photographing a whiteboard. See [why scans barely shrink](/scan).",
       "If they only asked for two pages of notes, Split. Range mode, one PDF. Do not merge extra catalogues ‘so they have everything’ and then fail the send. Chat caps punish generosity.",
       "Password-protected lecture notes are refused. Unlock in Preview, then drop. Live Photos and HEIC files are the wrong site — this domain is PDF only.",
       "iPhone Safari: keep the tab in the foreground. If it reloads, the file is too heavy for that phone. Try a laptop, then AirDrop the result back. Nothing was uploaded in either case.",
@@ -184,7 +184,7 @@ export const useCaseSections: CopySection[] = [
       "Merge is the wrong first click unless the client also wanted a price list stapled to the brochure. Split is useful if they only needed pages 2–5 of a 20-page lookbook.",
       "Forms, optional content groups and printer’s marks may not survive compress. Treat Folio output as a transmission copy. Keep the press PDF on disk with a name that says MASTER.",
       "If the shop’s machine rejects the email copy later, that is expected: you sent them the wrong file. Send the master. Folio did not convert colour spaces.",
-      "Related guides: Email size, Scans, How to compress. This use case is not e-sign and not a cloud proofing loop.",
+      "Related guides: [email size](/email), [scans](/scan), [how to compress](/how-to-compress). This use case is not e-sign and not a cloud proofing loop.",
     ],
   },
 ];

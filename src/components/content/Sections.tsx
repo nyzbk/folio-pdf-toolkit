@@ -1,3 +1,5 @@
+import { RichText } from "@/components/content/RichText";
+
 export type CopySection = {
   h2?: string;
   p: string[];
@@ -13,7 +15,7 @@ export function Sections({ sections, className = "mt-14" }: { sections: CopySect
           ) : null}
           {section.p.map((para) => (
             <p key={para.slice(0, 48)} className="mt-3 text-sm leading-relaxed text-ink/90">
-              {para}
+              <RichText text={para} />
             </p>
           ))}
         </section>
@@ -38,7 +40,9 @@ export function StepList({
             <h3 className="font-medium text-ink">
               {i + 1}. {step.title}
             </h3>
-            <p className="mt-2 text-ink/90">{step.body}</p>
+            <p className="mt-2 text-ink/90">
+              <RichText text={step.body} />
+            </p>
           </li>
         ))}
       </ol>

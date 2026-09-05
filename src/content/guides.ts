@@ -6,12 +6,12 @@ export const splitGuide = {
     "Cut pages out of a PDF on this device. Folio reads the file in the tab, writes the parts in memory, and never posts the document to a splitter API.",
   intro: [
     "The usual reason to split a PDF is not ‘I enjoy extra files’. It is that someone asked for page 12, or an inbox will not take 40 pages, or a folder should not hold the full contract. Hosted splitters solve that by taking the upload. That is the wrong bargain for an NDA, a medical scan, or a passport PDF.",
-    "Folio’s splitter is a page copier. It does not crop, redact, OCR, or rename chapters from bookmarks. It counts pages from the start of the file. Password-protected PDFs are refused. The work happens in Chrome, Edge, Firefox or Safari with JavaScript on.",
+    "Folio’s splitter is a page copier. It does not crop, redact, OCR, or rename chapters from bookmarks. It counts pages from the start of the file. Password-protected PDFs are refused. The work happens in Chrome, Edge, Firefox or Safari with JavaScript on. After you have the pages you need, you can [merge the pieces](/) or send a smaller extract through [email size limits](/email).",
   ],
   steps: [
     {
       title: "Open the Split tab on Folio",
-      body: "Use the Split control at the top of the toolkit, or this guide’s link to the tool. You should see a drop zone that says it takes one PDF at a time. If you landed on Merge by habit, you would be combining files, not cutting them.",
+      body: "Use the Split control at the top of the toolkit, or this guide’s link to the tool. You should see a drop zone that says it takes one PDF at a time. If you landed on Merge by habit, you would be combining files, not cutting them. The [merge how-to](/how-to-merge) is a different job.",
     },
     {
       title: "Drop the PDF you want to cut",
@@ -31,7 +31,7 @@ export const splitGuide = {
     },
     {
       title: "Choose one PDF per page for a ZIP of singles",
-      body: "Each page becomes its own file, named from the page number. Two or more pages download as a ZIP. Use this when a portal wants page-by-page attachments or when you will merge only some of those pages later.",
+      body: "Each page becomes its own file, named from the page number. Two or more pages download as a ZIP. Use this when a portal wants page-by-page attachments or when you will [merge only some of those pages later](/).",
     },
     {
       title: "Tap Split and wait in this tab",
@@ -61,6 +61,12 @@ export const splitGuide = {
         "Apple Preview and Acrobat can extract pages well, on one computer, with a licence or a platform lock-in. Folio is the same class of job in a tab you can open on a borrowed PC without installing those. iLovePDF and cousins will split after an upload and often after an account; they are faster at OCR and repair, and they see the file. Use them when the document is public. Use Folio when it is not.",
       ],
     },
+    {
+      h2: "Related pages on this site",
+      p: [
+        "A scan that is too heavy for mail is often a split job, not a compress job — that honesty is on [why scanned PDFs barely shrink](/scan). Attachment caps for Gmail and Outlook are the [email size guide](/email). After you have the pages you need, [merge them on the homepage](/). The twelve-click version of compress is [how to compress without uploading](/how-to-compress).",
+      ],
+    },
   ],
 };
 
@@ -70,12 +76,12 @@ export const compressGuide = {
     "Shrink a PDF in this browser when the weight is sloppy structure, not a photograph of paper. Folio rewrites the file locally. It does not send the document to a compressor.",
   intro: [
     "Mail apps, government portals and chat tools still cap attachments. The reflex is to ‘compress PDF online’, which usually means: upload, wait, download a rasterized cousin of your file, maybe with a watermark if you are not on a plan. Folio’s compressor is narrower. It copies pages into a new PDF and can strip metadata and pack objects. It will not blur a scan into a smaller JPEG for you.",
-    "That honesty is the product. If you bring a 40 MB colour scan, the after size will look like the before size. If you bring a 12 MB Word export, Balanced may actually help. Chrome, Edge, Firefox and Safari are supported. JavaScript on. Password-protected files are refused.",
+    "That honesty is the product. If you bring a 40 MB colour scan, the after size will look like the before size — read [why scans barely shrink](/scan) before you loop the slider. If you bring a 12 MB Word export, Balanced may actually help. Chrome, Edge, Firefox and Safari are supported. JavaScript on. Password-protected files are refused.",
   ],
   steps: [
     {
       title: "Open the Compress tab",
-      body: "Use the Compress control in the toolkit. You can add one PDF or several. Several successful outputs download as a ZIP. Merge and split are different tabs; compress does not join files and does not drop pages.",
+      body: "Use the Compress control in the toolkit. You can add one PDF or several. Several successful outputs download as a ZIP. Merge and split are different tabs; compress does not join files and does not drop pages. If you only need some pages, [split first](/split).",
     },
     {
       title: "Drop the file and read the size we show",
@@ -99,11 +105,11 @@ export const compressGuide = {
     },
     {
       title: "Read before and after sizes, then download",
-      body: "If after is almost before, keep the original and try split (fewer pages) or a dedicated scan tool. If after is smaller and the pages still look right, download. Open the file and try selecting a sentence. If you still need fillable fields, discard the compressed copy and keep the original form.",
+      body: "If after is almost before, keep the original and try [split](/split) (fewer pages) or accept that the file is a photograph of paper. If after is smaller and the pages still look right, download. Open the file and try selecting a sentence. If you still need fillable fields, discard the compressed copy and keep the original form.",
     },
     {
       title: "Send the download from your own tools",
-      body: "Folio does not email the result, does not give you a sharing link, and does not keep the job. Attach the file from Gmail, Files, or Finder yourself. Close the tab when you are done.",
+      body: "Folio does not email the result, does not give you a sharing link, and does not keep the job. Attach the file from Gmail, Files, or Finder yourself. Caps and the digital-vs-scan test are spelled out on [how to get a PDF through email](/email). Close the tab when you are done.",
     },
   ],
   after: [
@@ -125,6 +131,12 @@ export const compressGuide = {
         "Preview and Acrobat can reduce file size with image downsampling when you export. They see the file because they run as apps you installed. Online compressors see the file because you uploaded it, and they often rasterize pages, which destroys selectable text. Folio sits in between: a tab, no upload, no rasterize, no miracle on scans. Pick the bargain that matches the document.",
       ],
     },
+    {
+      h2: "Related pages on this site",
+      p: [
+        "Gmail and Outlook caps: [fit a PDF under email limits](/email). If before and after look alike, the file is probably a scan — [why a scanned PDF barely shrinks](/scan). Compress does not merge files; that is the [homepage merger](/) and the [merge how-to](/how-to-merge). Cutting pages is [how to split a PDF](/how-to-split).",
+      ],
+    },
   ],
 };
 
@@ -137,12 +149,12 @@ export const mergeGuide = {
     "Join two or more PDFs on this device. Folio copies pages in the tab and never posts the packet to a merge API.",
   intro: [
     "The usual reason to merge is a portal that wants one attachment: a lease plus an ID, an invoice plus a PO, a deck plus an appendix. Hosted mergers solve that by taking the upload. That is the wrong bargain when the files include an ID scan or a signed contract.",
-    "Folio concatenates whole files in the order you set. It does not interleave pages from two documents on its own. It does not delete a page in the middle of one file. If you need pieces, split first, then merge the pieces. Password-protected PDFs are refused. JavaScript must be on. Chrome, Edge, Firefox and Safari are the intended browsers.",
+    "Folio concatenates whole files in the order you set. It does not interleave pages from two documents on its own. It does not delete a page in the middle of one file. If you need pieces, [split first](/split), then merge the pieces. Password-protected PDFs are refused. JavaScript must be on. Chrome, Edge, Firefox and Safari are the intended browsers.",
   ],
   steps: [
     {
       title: "Open Folio’s merge page",
-      body: "The homepage is merge. You should see a drop zone for two or more PDFs. If you landed on Split or Compress, you are on a different job.",
+      body: "The homepage is merge. You should see a drop zone for two or more PDFs. If you landed on Split or Compress, you are on a different job. This page is the long version of that homepage.",
     },
     {
       title: "Drop the files that should become one packet",
@@ -158,26 +170,32 @@ export const mergeGuide = {
     },
     {
       title: "Download the combined PDF",
-      body: "There is no watermark. Open the file and flip through every page before you submit it to a portal. Then keep the originals on disk. Closing this tab discards the bytes in memory.",
+      body: "There is no watermark. Open the file and flip through every page before you submit it to a portal. Then keep the originals on disk. Closing this tab discards the bytes in memory. If Gmail then refuses the packet, that is size, not merge — open [email size limits](/email).",
     },
   ],
   after: [
     {
       h2: "If merge did not work",
       p: [
-        "Only one file: add a second PDF. Password: unlock locally. Over the size guard: compress a digital export first, or split a scan into fewer pages. Forms that must stay fillable: stop — merge copies pages and often drops the form catalog. Corrupt PDF: export again from the source app. Folio will not repair a broken xref table.",
+        "Only one file: add a second PDF. Password: unlock locally. Over the size guard: [compress](/compress) a digital export first, or [split](/split) a scan into fewer pages. Forms that must stay fillable: stop — merge copies pages and often drops the form catalog. Corrupt PDF: export again from the source app. Folio will not repair a broken xref table.",
       ],
     },
     {
       h2: "When merge is the wrong first click",
       p: [
-        "You need pages 4–7 of a 40-page file: that is Split. Gmail refuses 28 MB: that is Compress for a digital brochure, or Split if the extra pages are optional. A photograph of paper will not collapse because you merged it with a one-page letter. See the Email and Scans guides.",
+        "You need pages 4–7 of a 40-page file: that is [Split](/split). Gmail refuses 28 MB: that is [Compress](/compress) for a digital brochure, or Split if the extra pages are optional. A photograph of paper will not collapse because you merged it with a one-page letter. See [email size](/email) and [why scans barely shrink](/scan).",
       ],
     },
     {
       h2: "Versus Preview, Acrobat, and upload mergers",
       p: [
         "Preview and Acrobat merge well on one computer you already trust. Folio is the same class of job in a tab on a borrowed PC. iLovePDF and cousins merge after an upload and often after an account. Use them when the document is public. Use Folio when it is not.",
+      ],
+    },
+    {
+      h2: "Related pages on this site",
+      p: [
+        "The live merger is the [homepage](/). Cutting pages is [how to split a PDF](/how-to-split). Rewriting a digital export is [how to compress without uploading](/how-to-compress). Six real packets (landlord, NDA, Gmail brochure, HR portal, chat, print shop) are on [use cases](/use-cases).",
       ],
     },
   ],
@@ -190,28 +208,28 @@ export const emailGuide = {
     "Mail apps still reject large PDFs. Folio can compress a digital export or split pages in this tab. It will not pretend a scan became 2 MB.",
   intro: [
     "Gmail’s practical attachment ceiling is still around 25 MB for many accounts. Outlook and government portals vary, but the pattern is the same: the file is ‘too large’, and the reflex is an online compressor that uploads the document. Folio stays in the tab.",
-    "Two honest paths. If the PDF was exported from Word, InDesign, PowerPoint or an invoicing app, try Compress (Balanced). If the PDF is a photograph of paper, compress will barely move the needle — split out the pages the recipient actually needs, or re-scan at a lower resolution in the camera app. Folio does not downsample those photos and does not OCR.",
+    "Two honest paths. If the PDF was exported from Word, InDesign, PowerPoint or an invoicing app, try [Compress (Balanced)](/compress). If the PDF is a photograph of paper, compress will barely move the needle — [split out the pages](/split) the recipient actually needs, or re-scan at a lower resolution in the camera app. Folio does not downsample those photos and does not OCR. That refusal is documented on [why scanned PDFs barely shrink](/scan).",
   ],
   steps: [
     {
       title: "Look at what the PDF actually is",
-      body: "Open it and try to select a sentence. If you can highlight words, it is probably a digital export. If you can only select the whole page as a picture, it is a scan. That one test decides the next click.",
+      body: "Open it and try to select a sentence. If you can highlight words, it is probably a digital export. If you can only select the whole page as a picture, it is a scan. That one test decides the next click. Do not skip it: looping Compress on a scan wastes time and does not change the pixels.",
     },
     {
       title: "Digital export: open Compress, start with Balanced",
-      body: `Drop the file. Stay under ${MAX_PDF_MB} MB per file. Read before and after sizes. If Balanced helps, download and attach from your mail app. Folio does not send the email for you.`,
+      body: `Drop the file on [Compress](/compress). Stay under ${MAX_PDF_MB} MB per file. Read before and after sizes. If Balanced helps, download and attach from your mail app. Folio does not send the email for you.`,
     },
     {
       title: "If it is still over the cap, try Maximum or split",
-      body: "Maximum clears title/author and packs streams. It is not a new codec. If the file is still huge, open Split and keep only the pages the recipient asked for. Then attach that extract. Do not merge extra catalogues into the same file and wonder why Gmail still refuses it.",
+      body: "Maximum clears title/author and packs streams. It is not a new codec. If the file is still huge, open [Split](/split) and keep only the pages the recipient asked for. Then attach that extract. Do not [merge](/) extra catalogues into the same file and wonder why Gmail still refuses it.",
     },
     {
       title: "Scan: do not expect Compress to save you",
-      body: "A 300 dpi colour scan is heavy because of the pictures, not the PDF wrapper. Split to the pages that matter, or photograph the paper again at a smaller size. A dedicated scan compressor is a different product and usually wants an upload.",
+      body: "A 300 dpi colour scan is heavy because of the pictures, not the PDF wrapper. Split to the pages that matter, or photograph the paper again at a smaller size. A dedicated scan compressor is a different product and usually wants an upload. Folio’s position is the [scans guide](/scan).",
     },
     {
       title: "Keep a transmission copy and a master",
-      body: "The file you email can be the compressed or split copy. Keep the original for print or for a portal that hashes documents. Closing Folio does not archive either copy.",
+      body: "The file you email can be the compressed or split copy. Keep the original for print or for a portal that hashes documents. Closing Folio does not archive either copy. A print shop that asked for the layout export should not receive the mail copy — that split of jobs is in [use cases](/use-cases).",
     },
   ],
   after: [
@@ -219,18 +237,32 @@ export const emailGuide = {
       h2: "Caps people actually hit",
       p: [
         "Gmail: many accounts fail near 25 MB. Google Drive links are a different product — Folio will not mint one. Outlook / Microsoft 365: often 20–35 MB depending on the tenant. WhatsApp document sends are smaller than people think; a 15 MB brochure can fail on a phone. Government portals sometimes say 10 MB. None of those caps are Folio’s invention. We only rewrite or cut the file you already have.",
+        "Folio’s own guard is 80 MB per input so a phone tab survives. That is RAM, not an email cap. A file under 80 MB can still fail Gmail. Aim at the number the recipient named, not at ours.",
+      ],
+    },
+    {
+      h2: "Chat is not email",
+      p: [
+        "WhatsApp, Telegram and iMessage re-encode or reject large documents even when Gmail would take them. Folio does not send into the chat. You [compress](/compress) or [split](/split) here, download, then attach in the messenger yourself. If the other person only asked for two pages of notes, send two pages. Chat caps punish generosity. A longer write-up of that job sits on [use cases](/use-cases).",
+        "Do not merge a cover letter onto a 12 MB scan ‘so they have context’ and then fail the send. The cover letter can be a second message. The scan still will not shrink in this tab.",
       ],
     },
     {
       h2: "What will not help",
       p: [
-        "Renaming .pdf to .zip. Merging a tiny cover letter onto a 40 MB scan. Running High/Balanced/Maximum in a loop on a scan. Uploading to a random ‘PDF compressor’ if the file is an ID or a medical page. Asking Folio to OCR so the scan ‘becomes text’ — we do not.",
+        "Renaming .pdf to .zip. Merging a tiny cover letter onto a 40 MB scan. Running High/Balanced/Maximum in a loop on a scan. Uploading to a random ‘PDF compressor’ if the file is an ID or a medical page. Asking Folio to OCR so the scan ‘becomes text’ — we do not. The compressor’s actual steps are [how to compress a PDF](/how-to-compress).",
       ],
     },
     {
       h2: "Forms and portals",
       p: [
-        "If the portal still needs a fillable form, do not compress or merge that form here. Folio copies pages and often drops the form catalog. Flatten or keep the official file. Merge only static pages around it.",
+        "If the portal still needs a fillable form, do not compress or merge that form here. Folio copies pages and often drops the form catalog. Flatten or keep the official file. Merge only static pages around it. [How to merge](/how-to-merge) covers order and fillable-field loss in more detail.",
+      ],
+    },
+    {
+      h2: "Related pages on this site",
+      p: [
+        "Digital export that is merely sloppy: [Compress](/compress). Pages you do not need to send: [Split](/split). Photograph of paper: [scans](/scan). Joining a lease and an ID after they fit: [merge how-to](/how-to-merge). Short answers: [FAQ](/faq).",
       ],
     },
   ],
@@ -243,16 +275,16 @@ export const scanGuide = {
     "A scan is a photograph of paper stored inside a PDF. Folio rewrites structure. It does not shrink those photographs and it does not OCR.",
   intro: [
     "People bring a 40 MB colour scan to Compress and expect a 2 MB file. Online tools that deliver that usually rasterize or re-JPEG the page on a server. Folio will not do that, because that is a different bargain: quality loss, and usually an upload.",
-    "Use this page to decide whether Split, a new photo, or a different app is the honest next step. Merge will not make a scan lighter. Compress on High/Balanced/Maximum will not invent a codec.",
+    "Use this page to decide whether [Split](/split), a new photo, or a different app is the honest next step. [Merge](/) will not make a scan lighter. [Compress](/compress) on High/Balanced/Maximum will not invent a codec. If the problem is Gmail’s ~25 MB cap on a digital brochure, you are on the wrong page — that is [email size](/email).",
   ],
   steps: [
     {
       title: "Confirm it is a scan",
-      body: "Try to select a word. If you cannot, the page is an image. Phone scanner apps (Notes, Adobe Scan, CamScanner exports) are usually images. A Word ‘Save as PDF’ is usually text plus fonts.",
+      body: "Try to select a word. If you cannot, the page is an image. Phone scanner apps (Notes, Adobe Scan, CamScanner exports) are usually images. A Word ‘Save as PDF’ is usually text plus fonts. Only the second kind is a Compress candidate.",
     },
     {
       title: "If you only need some pages, Split",
-      body: "A 40-page scan where the portal wants pages 1 and 40 is a split job. Range mode builds one PDF of those pages. The extract is smaller because it has fewer photographs, not because we compressed the pixels.",
+      body: "A 40-page scan where the portal wants pages 1 and 40 is a [split](/split) job. Range mode builds one PDF of those pages. The extract is smaller because it has fewer photographs, not because we compressed the pixels. Steps: [how to split a PDF](/how-to-split).",
     },
     {
       title: "If you need every page, re-capture or use a scan tool",
@@ -264,14 +296,21 @@ export const scanGuide = {
     },
     {
       title: "After you have a smaller file, keep the master",
-      body: "Print shops and archives want the original. Email wants the extract. Folio is not a vault. Download and file both copies yourself.",
+      body: "Print shops and archives want the original. Email wants the extract. Folio is not a vault. Download and file both copies yourself. How those two files differ is also in [use cases](/use-cases).",
     },
   ],
   after: [
     {
       h2: "What Folio’s compressor actually does to a scan",
       p: [
-        "It copies pages into a new PDF. It can drop leftover metadata and pack object streams. The heavy image XObjects stay. That is why before and after look alike. The FAQ line ‘scanned PDF barely gets smaller’ is not a bug report. It is the product boundary.",
+        "It copies pages into a new PDF. It can drop leftover metadata and pack object streams. The heavy image XObjects stay. That is why before and after look alike. The FAQ line ‘scanned PDF barely gets smaller’ is not a bug report. It is the product boundary. The compressor steps for digital files are [how to compress without uploading](/how-to-compress).",
+      ],
+    },
+    {
+      h2: "An ID, a diploma, a stack of photographed notes",
+      p: [
+        "An ID scan is usually one or two pages and still huge because the phone saved a 12-megapixel JPEG inside the PDF. Compress will not save that. Recapture in the scanner app at a document preset, or photograph farther away. Then, if a portal wants the ID next to a lease, [merge](/) the smaller ID with the lease. Do not merge first and hope the packet shrinks.",
+        "A diploma photograph plus a transcript is an HR packet. If the diploma is 18 MB and the portal cap is 10 MB, merge will not save you. That story is written out under [use cases](/use-cases). Folio will not OCR the diploma into text so it ‘becomes small’.",
       ],
     },
     {
@@ -286,7 +325,12 @@ export const scanGuide = {
         "Encrypted files are refused. Unlock them in the scanner app or Acrobat, then drop the unprotected copy. We will not take the password.",
       ],
     },
+    {
+      h2: "Related pages on this site",
+      p: [
+        "Mail and portal caps, including the 25 MB Gmail number: [email size](/email). Cutting pages: [Split](/split) and [how to split](/how-to-split). Joining an extract with a cover letter: [how to merge](/how-to-merge). Short answers: [FAQ](/faq).",
+      ],
+    },
   ],
 };
 export const scanHowToSteps = scanGuide.steps.map((s) => `${s.title}: ${s.body}`);
-

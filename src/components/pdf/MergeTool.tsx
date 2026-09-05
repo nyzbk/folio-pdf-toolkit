@@ -136,9 +136,9 @@ export function MergeTool() {
       <AdUnit slot="mid" className="mt-10" />
       <Sections sections={mergeSections} />
       <GuideCtas
-        toolHref="/how-to-split"
-        toolLabel="How to split a PDF"
-        extra={{ href: "/how-to-compress", label: "How to compress without uploading" }}
+        toolHref="/how-to-merge"
+        toolLabel="How to merge PDFs"
+        extra={{ href: "/email", label: "Email size limits" }}
       />
       <FaqSection items={mergeFaq} />
       <RelatedTools current="merge" />

@@ -33,7 +33,7 @@ function AboutPage() {
         <GuideCtas
           toolHref="/"
           toolLabel="Merge PDFs"
-          extra={{ href: "/faq", label: "FAQ" }}
+          extra={{ href: "/email", label: "Email size" }}
         />
       </main>
     </AppShell>

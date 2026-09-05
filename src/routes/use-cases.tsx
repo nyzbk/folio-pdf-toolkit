@@ -32,7 +32,7 @@ function UseCasesPage() {
         <GuideCtas
           toolHref="/"
           toolLabel="Merge PDFs"
-          extra={{ href: "/split", label: "Split a PDF" }}
+          extra={{ href: "/email", label: "Email size limits" }}
         />
       </article>
     </AppShell>

@@ -62,22 +62,22 @@ export const folioFaq: FaqItem[] = [
 
 export const qGmail: FaqItem = {
   q: "Gmail said my PDF is too large. What should I click?",
-  a: "If you can select text in the PDF, open Compress and try Balanced, then Maximum. If you cannot select text, it is probably a scan — Compress will barely help. Split out the pages the recipient needs, or recapture the paper at a smaller size. Folio does not email the file and does not give you a Drive link. Details: the Email size guide.",
+  a: "If you can select text in the PDF, open [Compress](/compress) and try Balanced, then Maximum. If you cannot select text, it is probably a scan — Compress will barely help. [Split](/split) out the pages the recipient needs, or recapture the paper at a smaller size. Folio does not email the file and does not give you a Drive link. The long version is the [email size guide](/email).",
 };
 
 export const qScanShrink: FaqItem = {
   q: "Will Folio shrink a scanned ID or a stack of photographed pages?",
-  a: "Almost never in a way that matters. Those files are heavy because of the pictures inside, not because of PDF metadata. Folio does not downsample images and does not OCR. Split if you only need some pages. See the Scans guide. Do not upload an ID to a random compressor.",
+  a: "Almost never in a way that matters. Those files are heavy because of the pictures inside, not because of PDF metadata. Folio does not downsample images and does not OCR. Split if you only need some pages. See the [scans guide](/scan). Do not upload an ID to a random compressor.",
 };
 
 export const qPrintShop: FaqItem = {
   q: "Can I print the merged file at a shop?",
-  a: "You can download it and take it to a shop. Folio does not produce PDF/X or PDF/A on purpose. Page sizes are not forced to one paper size. A phone-photo PDF merged with an A4 lease may look odd on a plotter. For a press-ready brochure, keep the layout export. Folio output is for packets and mail, not a new print master.",
+  a: "You can download it and take it to a shop. Folio does not produce PDF/X or PDF/A on purpose. Page sizes are not forced to one paper size. A phone-photo PDF merged with an A4 lease may look odd on a plotter. For a press-ready brochure, keep the layout export. Folio output is for packets and mail, not a new print master. That split of jobs is also in [use cases](/use-cases).",
 };
 
 export const qAttachSize: FaqItem = {
   q: "What attachment size should I aim for?",
-  a: "There is no single number. Gmail often fails near 25 MB. Some portals say 10 MB. WhatsApp document sends are frequently lower. Aim under the cap the recipient named. Folio’s own guard is 80 MB per input file so a phone tab survives — that is not an email cap.",
+  a: "There is no single number. Gmail often fails near 25 MB — details on [email size](/email). Some portals say 10 MB. WhatsApp document sends are frequently lower. Aim under the cap the recipient named. Folio’s own guard is 80 MB per input file so a phone tab survives — that is not an email cap.",
 };
 
 folioFaq.push(qGmail, qScanShrink, qPrintShop, qAttachSize);

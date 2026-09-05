@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { AppShell } from "@/components/layout/AppShell";
 import { GuideCtas, Sections, StepList, type CopySection } from "@/components/content/Sections";
+import { RichText } from "@/components/content/RichText";
 import { AdUnit } from "@/components/ads/AdUnit";
 
 type Guide = {
@@ -31,7 +32,7 @@ export function GuidePage({
         <p className="mt-4 text-base leading-relaxed text-ink/90">{guide.lede}</p>
         {guide.intro.map((para) => (
           <p key={para.slice(0, 40)} className="mt-4 text-sm leading-relaxed text-ink/90">
-            {para}
+            <RichText text={para} />
           </p>
         ))}
         <GuideCtas toolHref={toolHref} toolLabel={toolLabel} extra={extra} />

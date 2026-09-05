@@ -177,7 +177,7 @@ export function CompressTool() {
       <GuideCtas
         toolHref="/how-to-compress"
         toolLabel="Full guide: compress without uploading"
-        extra={{ href: "/use-cases", label: "When Gmail refuses a brochure" }}
+        extra={{ href: "/email", label: "When Gmail refuses a brochure" }}
       />
       <FaqSection items={compressFaq} />
       <RelatedTools current="compress" />

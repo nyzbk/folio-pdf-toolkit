@@ -1,3 +1,5 @@
+import { RichText } from "@/components/content/RichText";
+
 type Props = {
   steps: string[];
 };
@@ -12,7 +14,9 @@ export function HowItWorks({ steps }: Props) {
             <span className="flex size-8 shrink-0 items-center justify-center rounded-full border border-line bg-surface text-sm font-medium">
               {i + 1}
             </span>
-            <p className="pt-1 text-sm leading-relaxed text-ink/90">{step}</p>
+            <p className="pt-1 text-sm leading-relaxed text-ink/90">
+              <RichText text={step} />
+            </p>
           </li>
         ))}
       </ol>

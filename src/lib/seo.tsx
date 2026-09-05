@@ -1,4 +1,5 @@
 import type { FaqItem } from "@/components/pdf/FaqSection";
+import { stripMdLinks } from "@/components/content/RichText";
 import { SITE_NAME, SITE_ORIGIN, absUrl } from "@/lib/site";
 
 type JsonLdOpts = {
@@ -71,7 +72,7 @@ export function jsonLdScripts(opts: JsonLdOpts) {
         mainEntity: opts.faqs.map((item) => ({
           "@type": "Question",
           name: item.q,
-          acceptedAnswer: { "@type": "Answer", text: item.a },
+          acceptedAnswer: { "@type": "Answer", text: stripMdLinks(item.a) },
         })),
       }),
     });
@@ -87,7 +88,7 @@ export function jsonLdScripts(opts: JsonLdOpts) {
         step: opts.howToSteps.map((text, i) => ({
           "@type": "HowToStep",
           position: i + 1,
-          text,
+          text: stripMdLinks(text),
         })),
       }),
     });
