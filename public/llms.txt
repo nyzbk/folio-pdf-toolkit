@@ -1,0 +1,37 @@
+# Folio
+
+> Merge, split and compress PDF files in the browser. No upload, no signup, no watermark. pdf-lib runs in this tab; the packet never posts to a conversion API.
+
+The public origin is https://folio-pdf-toolkit.vercel.app. Operated by Ultimatum. Contact ultaultimatum@gmail.com.
+
+## Tools
+
+* [Merge PDFs](https://folio-pdf-toolkit.vercel.app/) — Join two or more PDFs into one packet. Reorder whole files. Download without a watermark.
+* [Split PDF](https://folio-pdf-toolkit.vercel.app/split) — Pull ranges or single pages out of a PDF on this device.
+* [Compress PDF](https://folio-pdf-toolkit.vercel.app/compress) — Shrink a PDF for email and portals without sending the file to a compressor SaaS.
+
+## Guides
+
+* [How to merge without uploading](https://folio-pdf-toolkit.vercel.app/how-to-merge) — Step-by-step join, reorder, download.
+* [How to split](https://folio-pdf-toolkit.vercel.app/how-to-split) — Ranges versus one-page extracts.
+* [How to compress](https://folio-pdf-toolkit.vercel.app/how-to-compress) — What Folio can flatten and what it cannot (already-tiny scans).
+* [Email size](https://folio-pdf-toolkit.vercel.app/email) — Attachment ceilings. Merge then compress before you hit send.
+* [Scans](https://folio-pdf-toolkit.vercel.app/scan) — Camera JPEGs inside a PDF versus born-digital vectors. Folio is not a camera app.
+* [WhatsApp](https://folio-pdf-toolkit.vercel.app/whatsapp) — Chat recode of a PDF send. Document vs photo.
+* [FAQ](https://folio-pdf-toolkit.vercel.app/faq) — Privacy, limits, watermark, operator.
+* [Use cases](https://folio-pdf-toolkit.vercel.app/use-cases) — Lease + ID, invoice + PO, deck + appendix.
+
+## Site
+
+* [About](https://folio-pdf-toolkit.vercel.app/about) — What Folio is and refuses to be.
+* [Contact](https://folio-pdf-toolkit.vercel.app/contact)
+* [Privacy](https://folio-pdf-toolkit.vercel.app/privacy) — Bytes stay in the tab.
+* [Terms](https://folio-pdf-toolkit.vercel.app/terms)
+* [Sitemap](https://folio-pdf-toolkit.vercel.app/sitemap.xml)
+* [llms.txt](https://folio-pdf-toolkit.vercel.app/llms.txt) — This file.
+
+## Not on this origin
+
+* Folio does not OCR. Folio does not sign documents. Folio does not host your packet.
+* Merge lives at `/`. `/merge` canonicalises to `/`.
+* There is no YouTube-style `/blogs/` cluster. Guides are the how-to pages listed above.
